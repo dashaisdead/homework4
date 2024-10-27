@@ -1,0 +1,48 @@
+chipsSold = int(input('Chips sold (0 for no, 1 for yes):\n'))
+fruitSold = int(input('Fruit sold (0 for no, 1 for yes):\n'))
+nutsSold = int(input('Nuts sold (0 for no, 1 for yes):\n'))
+juiceSold = int(input('Juice sold (0 for no, 1 for yes):\n'))
+waterSold = int(input('Water sold (0 for no, 1 for yes):\n'))
+coffeeSold = int(input('Coffee sold (0 for no, 1 for yes):\n'))
+
+# Initialize lists to collect sold items
+snacks = []
+drinks = []
+
+# Check for snacks
+if chipsSold == 1:
+    snacks.append("Chips")
+if fruitSold == 1:
+    snacks.append("Fruit")
+if nutsSold == 1:
+    snacks.append("Nuts")
+
+# Check for drinks
+if juiceSold == 1:
+    drinks.append("Juice")
+if waterSold == 1:
+    drinks.append("Water")
+if coffeeSold == 1:
+    drinks.append("Coffee")
+
+# Determine output for snacks
+if len(snacks) == 3:  # All snacks sold
+    output_snacks = "All-snacks"
+else:
+    output_snacks = " ".join(snacks)
+
+# Determine output for drinks
+if len(drinks) == 3:  # All drinks sold
+    output_drinks = "All-drinks"
+else:
+    output_drinks = " ".join(drinks)
+
+# Prepare final output
+if not output_snacks and not output_drinks:
+    print("No items")  # No extra space added here
+else:
+    result = output_snacks
+    if output_drinks:
+        result += " " + output_drinks
+    print(result + " ")  # Adding space at the end for expected output
+
